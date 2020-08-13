@@ -1,8 +1,6 @@
-package main
+package kmp
 
-import "fmt"
-
-func kmpSearch(input string, pattern string) []int {
+func KmpSearch(input string, pattern string) []int {
 	M := len(input)
 	N := len(pattern)
 	if M == 0 || N == 0 {
@@ -29,7 +27,6 @@ func kmpSearch(input string, pattern string) []int {
 		}
 	}
 	next = append([]int{-1}, next...)[:len(next)]
-	//fmt.Println(next)
 
 	i = 0
 	j := 0
@@ -50,9 +47,4 @@ func kmpSearch(input string, pattern string) []int {
 		}
 	}
 	return result
-}
-
-func main() {
-	fmt.Println(kmpSearch("what is mind? no matter; what is matter? never mind.",
-		"mind"))
 }
